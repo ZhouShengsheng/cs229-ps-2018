@@ -1,0 +1,13 @@
+\begin{answer}
+Note it also states that $p(x|\theta) = p(x)$. We have
+
+$$
+    \begin{aligned}
+        \theta_{\text{MAP}} &= \arg \max_{\theta}p(\theta| x, y)\\
+        &= \arg \max_\theta p(x, y|\theta) p(\theta)\\
+        &= \arg \max_\theta p(y|x, \theta) p(x|\theta)p(\theta) \\
+        &= \arg \max_\theta p(y|x, \theta)p(\theta)
+    \end{aligned}
+$$
+
+\end{answer}

@@ -1,2 +1,19 @@
 \begin{answer}
+We have
+$$
+\begin{aligned}
+p(y=1|x, \phi, \mu_0, \mu_1, \Sigma) &= \frac{p(x|y=1)p(y=1)}{p(x|y=1)p(y=1) + p(x|y=0)p(y=0)}\\
+&= \frac{1}{1 + \frac{p(x|y=0)p(y=0)}{p(x|y=1)p(y=1)}}\\
+&= \frac{1}{1 + \exp(-\frac{1}{2}[(x - \mu_0)^T\Sigma^{-1}(x - \mu_0) -(x - \mu_0)^T\Sigma^{-1}(x - \mu_0)])}\frac{1 - \phi}{\phi}\\
+&= \frac{1}{1 + \exp(-[(\mu_1 - \mu_0)^T\Sigma^{-1}x  ) + \frac{1}{2}(\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigma^{-1}\mu_1) - \log\frac{1-\phi}{\phi}]}
+\end{aligned}
+$$
+
+So we can take 
+
+$$
+\theta = (\mu_1 - \mu_0)^T\Sigma^{-1},\\ 
+\theta_0 = \frac{1}{2}(\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigma^{-1}\mu_1) - \log\frac{1-\phi}{\phi}
+$$
+
 \end{answer}

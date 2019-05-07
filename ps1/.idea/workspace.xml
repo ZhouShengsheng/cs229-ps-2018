@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63502674-18a0-4a97-a6ee-b1dec89a5375" name="Default Changelist" comment="" />
+    <list default="true" id="63502674-18a0-4a97-a6ee-b1dec89a5375" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/output/p01b_pred_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/output/p01b_pred_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/output/p01b_pred_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/output/p01b_pred_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/p01b_logreg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/p01b_logreg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/p05c_tau.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/p05c_tau.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/01-logreg-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/01-logreg-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/03-gda-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/03-gda-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/04-gda-ll-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/04-gda-ll-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/06-plot-ds1-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/06-plot-ds1-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/07-plot-ds2-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/07-plot-ds2-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/01-linreg/08-extra-credit-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/01-linreg/08-extra-credit-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/02-posonly/01-constant-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/02-posonly/01-constant-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/02-posonly/02-estimate-alpha-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/02-posonly/02-estimate-alpha-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/02-posonly/05-plot-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/02-posonly/05-plot-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/03-poisson/01-exponential-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/03-poisson/01-exponential-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/03-poisson/02-response-fn-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/03-poisson/02-response-fn-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/03-poisson/03-gd-update-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/03-poisson/03-gd-update-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/04-glm-convexity/01-mean-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/04-glm-convexity/01-mean-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/04-glm-convexity/02-var-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/04-glm-convexity/02-var-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/04-glm-convexity/03-hessian-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/04-glm-convexity/03-hessian-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/05-weighted/01-intro-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/05-weighted/01-intro-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/05-weighted/02-impl-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/05-weighted/02-impl-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tex/05-weighted/03-tau-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tex/05-weighted/03-tau-sol.tex" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,30 +36,33 @@
     <session id="1250638126">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="py" value="51" />
+          <entry key="py" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="2" />
-          <entry key="Python" value="51" />
+          <entry key="Python" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7592" />
+          <entry key="py" value="7989" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="7592" />
+          <entry key="Python" value="7989" />
         </counts>
       </usages-collector>
     </session>
@@ -45,12 +72,12 @@
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/util.py">
+            <entry file="file://$PROJECT_DIR$/src/p01b_logreg.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+                <state relative-caret-position="216">
+                  <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
                   <folding>
-                    <element signature="e#0#31#0" expanded="true" />
+                    <element signature="e#0#18#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -63,8 +90,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/p05c_tau.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="659">
-                  <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+                <state relative-caret-position="148">
+                  <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -76,15 +103,18 @@
       </split-second>
     </splitter>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/p01e_gda.py" />
         <option value="$PROJECT_DIR$/src/p02cde_posonly.py" />
-        <option value="$PROJECT_DIR$/src/p01b_logreg.py" />
         <option value="$PROJECT_DIR$/src/p03d_poisson.py" />
-        <option value="$PROJECT_DIR$/src/p05b_lwr.py" />
         <option value="$PROJECT_DIR$/src/p05c_tau.py" />
+        <option value="$PROJECT_DIR$/src/p05b_lwr.py" />
+        <option value="$PROJECT_DIR$/src/p01b_logreg.py" />
       </list>
     </option>
   </component>
@@ -94,10 +124,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="width" value="1366" />
     <option name="height" value="768" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -125,6 +156,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/p05b_lwr.py&#10;tau&#9;null&#9;null&#10;ut&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/util.py&#10;li&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/linear_model.py&#10;l&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/p01b_logreg.py&#10;log&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/p01b_logreg.py&#10;re&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/p01b_logreg.py&#10;lin&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/linear_model.py&#10;u&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/util.py&#10;lo&#9;FILE&#9;file:///Users/lin/Documents/Courses/DL/cs229/2018-fall/PS/ps1/src/p01b_logreg.py&#10;uti&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -155,18 +187,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -174,12 +200,18 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Remote Host" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,16 +231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p01e_gda.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Projects/iterative_inference/util/train_val.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -220,19 +242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/p01b_logreg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -240,9 +249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -255,30 +261,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/p05b_lwr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="326">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p01e_gda.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p05c_tau.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p05c_tau.py">
+    <entry file="file://$PROJECT_DIR$/src/p01b_logreg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        <state relative-caret-position="216">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

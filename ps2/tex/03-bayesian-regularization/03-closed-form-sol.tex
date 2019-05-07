@@ -1,0 +1,22 @@
+\begin{answer}
+    Note 
+    $$
+    \begin{aligned}
+\theta_{\text{MAP}} &= \arg \max_\theta p(y|x, \theta)p(\theta)\\
+&= \arg \max _\theta \log p(y|x, \theta) + \log (\theta)\\
+&= \arg \max_\theta-\frac{1}{2\sigma^2} (X\theta - \vec{y})^T(X\theta - \vec{y}) - \frac{1}{2\eta^2}\theta^T\theta
+\end{aligned}
+$$
+
+We take the derivative with respect to the objective and we get
+
+$$
+    \frac{1}{\sigma^2}X^T(\vec{y} - X\theta) - \frac{1}{\eta^2}\theta = 0
+    $$
+
+    or 
+
+    $$
+    \theta = (X^TX + \frac{\sigma^2}{\eta^2}I)^{-1}X^T\vec{y}
+    $$
+\end{answer}

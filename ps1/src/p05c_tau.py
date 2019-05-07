@@ -45,6 +45,9 @@ def main(tau_values, train_path, valid_path, test_path, pred_path):
     # Run on the test set to get the MSE value
     x_test, y_test = util.load_dataset(test_path, add_intercept=True)
     y_pred = model.predict(x_test)
+    mse = ((y_test - y_pred) ** 2).mean()
+    print('test mse: {}'.format(mse))
+
     # Save test set predictions to pred_path
     np.savetxt(pred_path, y_pred)
     # P

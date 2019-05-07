@@ -1,0 +1,31 @@
+
+\begin{answer}
+
+\begin{figure}[htbp]
+\begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{pics/F1b-b.png}
+    \caption{Dataset A}\label{fig:dataset-a}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{pics/F1b-a.png}
+    \caption{Dataset B}\label{fig:dataset-b}
+\end{subfigure}
+\caption{Datasets}
+\label{fig:datasets}
+\end{figure}
+
+Figure~\subref{fig:dataset-a} and Figure~\subref{fig:dataset-b} shows the two datasets. The problem is that dataset B is perfectly linearly separable. 
+
+Consider optimizing objective:
+
+$$
+    L(\theta) = \prod_{i=1}^mp(y^{(i)}|x^{(i)};\theta) = \frac{1}{1 + e^{-y^{(i)}\theta^T x^{(i)}}}
+$$
+
+    If the dataset is linearly seperable, then for some optimal $\theta$, $y^{(i)}\theta^T x^{(i)}$ will always be positive. In this case, we can multiply $\theta$ by a larger scalar to get larger $L(\theta)$. However, when the dataset is not linearly seperable, this is not the case.
+
+
+\end{answer}
+

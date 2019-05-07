@@ -1,2 +1,21 @@
 \begin{answer}
+    We have
+    $$
+    \frac{\partial }{\partial \eta}\int p(y;\eta)dy = 0
+    $$
+
+    and 
+    $$
+    \begin{aligned}
+\frac{\partial }{\partial \eta}\int
+p(y;\eta)dy &= \int\frac{\partial}{\partial \eta }p(y;\eta)dy\\
+&= \int (y - a'(\eta))b(y) \exp(\eta y - a(\eta))dy\\
+&=\mathbb E_y[y|\eta] - a'(\eta)
+\end{aligned}
+$$
+
+So
+$$
+    a'(\eta) = \mathbb E[y|\eta]
+    $$
 \end{answer}

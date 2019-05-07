@@ -1,2 +1,26 @@
 \begin{answer}
+    The log likelihood:
+    $$
+    \begin{aligned}
+l(\theta) &= \sum_{i=1}^m\log p(y^{(i)}|x^{(i)}; \theta) \\
+&= \sum_{i=1}^m-\log y^{(i)}! + y^{(i)}\theta^Tx^{(i)} - e^{\theta^Tx^{(i)}}
+\end{aligned}
+$$
+
+And thus 
+
+$$
+\begin{aligned}
+\frac{\partial l(\theta)}{\partial \theta_j} &= \sum_{i=1}^my^{(i)}x^{(i)}_j - x^{(i)}_j g(\theta^Tx^{(i)})\\
+&= \sum_{i=1}^m (y^{(i)} - g(\theta^Tx^{(i)}))x^{(i)}_j
+\end{aligned}
+$$
+
+So the update rule is given by
+$$
+\theta_j := \theta_j + \alpha (y^{(i)} - g(\theta^Tx^{(i)}))x_j^{(i)}
+$$
+
+    Where $g(\eta) = e^\eta$ is the canonical response function.
+
 \end{answer}

@@ -1,0 +1,43 @@
+\begin{answer}
+    For each of the following problems, $K^i$ denotes the square matrix for kernel $K_i$.
+    \begin{enumerate}
+        \item  Here $K = K^1 + K^2$ must be symmetric, and $z^TKz = z^TK^1z + z^TK^2 z \ge 0$, so $K$ is a kernel.
+        \item Take $K^1 = 0$, then $z^TKz = z^TK^1z - z^TK^2 z \le 0$. For any nonzero $K_2$ this is clearly not positive semidefinite.
+        \item $K = aK^1$ is symmetric, and $z^TKz = az^TK^1z \ge 0$, so it is a valid kernel.
+        \item $z^TKz = -(az^TK^1z) \le 0$, then for any nonzero $K^1$ $K$ is not positive semidefinite.
+        \item Since $K^1$ is a valid kernel, we can assume that there exists some function $\phi^1$ such that $K^1_{ij} = \phi^1(x^{(i)})^T \phi^1(x^{j})$. The same for $K^2$. In this case, 
+
+            $$
+        \begin{aligned}
+z^TK z &= \sum_{i=1}^m\sum_{j=1}^m z_i\phi^1(x^{(i)})^T\phi^1(x^{(j)})\phi^2(x^{(i)})^T\phi^2(x^{(j)})z_j\\
+&=\sum_{i=1}^m\sum_{j=1}^m z_i\sum_{k=1}^n\phi^1(x^{(i)})_k\phi^1(x^{(j)})_k\sum_{p=1}^n\phi^2(x^{(i)})_p\phi^2(x^{(j)})_pz_j\\
+&=\sum_{k=1}^n\sum_{p=1}^m (\sum_{i=1}^mz_i\phi^1(x^{(i)})_k\phi^2(x^{(i)})_p)(\sum_{j=1}^mz_i\phi^1(x^{(j)})_k\phi^2(x^{(j)})_p)\\
+&=\sum_{k=1}^n\sum_{p=1}^m (\sum_{i=1}^mz_i\phi^1(x^{(i)})_k\phi^2(x^{(i)})_p)^2 \ge 0
+\end{aligned}
+$$
+
+    So it is positive semidefinite. It is clearly symmetric as $K = K^1 \circ K^2$.
+\item Yes. This is symmetric in that $K_{ij} = K(x^{(i)}, x^{(j)}) = f(x^{(i)})f(x^{(j)}) = f(x^{(j)})f(x^{(i)}) = K_{ji}$. And
+
+    $$
+    z^TKz = \sum_{i,j=1}^m z_if(x^{(i)})f(x^{(j)}) z_j= (z^Tx)^2
+    $$
+
+    If we let $x_i = f(x^{(i)})$.
+\item Yes. Consider $K$ to be the squared matrix built on $\{x^{(i)}\}_i$, and $K^3$ to be the squared matrix built on $\{\phi(x^{(i)})\}$, then $K = K^3$ is symmetric and positive semidefinite.
+\item Yes. Let $p$ be order-$k$ with coefficients $a_0, \ldots, a_k$. Then
+    $$
+    \begin{aligned}
+z^TKz &= \sum_{i,j=1}^m z_i p(K_{ij}) z_j\\
+&= \sum_{l=0}^ka_l\sum_{i,j=1}^m z_iK^1_{ij}z_k\\
+&= \sum_{l=0}^ka_lz^T(K^1)^lz
+\end{aligned}
+$$
+
+    Where $(K^1)^l$ denotes the elementwise power of $K$ to the order of $l$. From part (e), if $K^1$ is symmetric and positive semidefinite, then $(K^1)^l$ is also symmetric and positve semidefinite, so $z^TKz \ge 0$ is always true. So $K$ is a valid kernel.
+
+
+    \end{enumerate}
+
+
+\end{answer}

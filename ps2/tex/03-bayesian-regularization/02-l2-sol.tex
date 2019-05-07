@@ -1,0 +1,11 @@
+\begin{answer}
+    $$
+    \begin{aligned}
+\theta_{\text{MAP}} &= -\arg \min_\theta p(y|x, \theta)p(\theta)\\
+        &= -\arg \min _\theta \log p(y|x, \theta) + \log \frac{1}{(2\pi)^{n/2}\eta^n}\exp(-\frac{1}{2}\theta^T\eta^{-2} \theta )\\
+        &= \arg\min_\theta -\log p(y|x, \theta) + \frac{1}{2}\eta^{-2}\|\theta\|_2^2
+\end{aligned}
+$$
+
+    Clearly, we have $\lambda = \frac{1}{2\eta^2}$.
+\end{answer}

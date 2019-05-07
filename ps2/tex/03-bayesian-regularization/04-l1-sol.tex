@@ -1,0 +1,13 @@
+\begin{answer}
+$$
+    \begin{aligned}
+\theta &= -\arg \min_\theta \log p(y|x, \theta)p(\theta)\\
+&= \arg \min_\theta -\log p(y|x, \theta) - \log p(\theta)\\
+&= \arg \min_\theta -\log p(y|x, \theta) - \log \frac{1}{2b}\exp(-\frac{\|\theta\|}{b})\\
+&= \arg \min_\theta -\log p(y|x, \theta) + \frac{1}{b}\|\theta\|
+\end{aligned}
+$$
+
+So here, $\lambda = 1/ b$.
+
+\end{answer}

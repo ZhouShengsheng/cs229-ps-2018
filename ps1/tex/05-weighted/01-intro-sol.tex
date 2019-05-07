@@ -1,2 +1,69 @@
 \begin{answer}
+    \begin{enumerate}
+    \item
+    We have
+
+    $$
+    \begin{aligned}
+J(\theta) &= \sum_{i=1}^m (\theta^Tx^{(i)} - y^{(i)})(\frac{1}{2}w^{(i)}) (\theta^Tx^{(i)} - y^{(i)})\\
+&= \sum_{i=1}^m (X\theta -y)^T_i (\frac{1}{2}w^{(i)}) (X\theta- y)_i
+\end{aligned}
+$$
+
+If we let 
+
+$$
+W_{ij} = \begin{cases}
+\frac{1}{2}w^{(i)} &i=j\\
+0&\text{otherwise}
+\end{cases}
+$$
+
+Then 
+
+$$
+\begin{aligned}
+J(\theta)
+&= \sum_{i=1}^m (X\theta -y)^T_i (\frac{1}{2}w^{(i)}) (X\theta- y)_i\\
+&= \sum_{i, j=1}^m (X\theta -y)^T_i W_{ij} (X\theta- y)_j\\\\
+&= (X\theta - y)^T W(X\theta - y)
+\end{aligned}
+$$
+\item
+    We have
+
+    $$
+    \begin{aligned}
+\frac{\partial}{\partial \theta}J(\theta) &= \frac{\partial}{\partial \theta} (\theta^TX^TWX\theta - 2y^TW X\theta + y^TWy)\\
+&=  2X^TWX\theta - 2 X^TW^Ty
+\end{aligned}
+$$
+
+Taking the derivatives to zero, we find
+
+$$
+\theta = (X^TWX)^{-1}X^TW y
+$$
+
+\item
+
+The log likelihood
+
+$$
+\begin{aligned}
+l(\theta) &= \sum_{i=1}^m \log p(y^{(i)}|x^{(i)};\theta)\\
+&= \sum_{i=1}^m(-\log \sqrt2\pi - \log \sigma^{(i)} - \frac{1}{2(\sigma^{(i)})^2} (y^{(i)} - \theta^Tx^{(i)})^2)
+\end{aligned}
+$$
+
+Maximizing this is equivalent to minimizing
+
+$$
+            J(\theta) = \sum_{i=1}^m\frac{1}{2(\sigma^{(i)})^2} (y^{(i)} - \theta^Tx^{(i)})^2)
+            $$
+
+    \end{enumerate}
+
+So here $w^{(i)} = 1/ (\sigma^{(i)})^2$
+
 \end{answer}

@@ -1,2 +1,21 @@
 \begin{answer}
+We have
+    $$
+    \begin{aligned}
+l(\phi, \mu_0, \mu_1, \Sigma) &= \sum_{i=1}^m(\log p(x^{(i)}|y^{(i)}; \mu_0, \mu_1, \Sigma) + \log p(y^{(i)};\phi))\\
+&= \sum_{i=1}^m [1\{y^{(i)} = 0\} \log \frac{1}{\sqrt{2\pi}\sigma}\exp(-\frac{(x^{(i)} - \mu_0)^2}{2\sigma^2}) + 1\{y^{(i)} = 1\} \log \frac{1}{\sqrt{2\pi}\sigma}\exp(-\frac{(x^{(i)} - \mu_1)^2}{2\sigma^2}) + y^{(i)} \log \phi + (1 - y^{(i)}\log (1- \phi))]
+\end{aligned}
+$$
+And we set derivatives to zero:
+
+    \[
+\begin{aligned}
+\frac{\partial l}{\partial \phi} = y^{(i)}\frac{1}{\phi} + (1 - y^{(i)})\frac{1}{1- \phi} = 0\\
+\frac{\partial l}{\partial \mu_0} = - \sum_{i=1}^m1\{y^{(i)} = 0\} \frac{x^{(i)} - \mu_0}{\sigma^2} = 0\\
+\frac{\partial l}{\partial \mu_1} = - \sum_{i=1}^m1\{y^{(i)} = 1\} \frac{x^{(i)} - \mu_1}{\sigma^2} = 0\\
+\frac{\partial l}{\partial \sigma^2 } = \sum_{i=1}^m -\frac{1}{2\sigma^2} + \frac{(x^{(i)} - \mu_{y^{(i)}})^2}{2\sigma^4} = 0
+\end{aligned}
+\]
+And from these we get the estimations.
 \end{answer}
+

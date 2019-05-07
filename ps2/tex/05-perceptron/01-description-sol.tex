@@ -1,0 +1,9 @@
+\begin{answer}
+    \begin{enumerate}
+        \item The recursive form of $\theta^{(i+1)}$ suggested that each $\theta^{(i+1)}$ can be represented as a linear combination of $\phi(x^{(1)}), \ldots, \phi(x^{(i)})$. For convenience, we can represent $\theta^{(i)}$ as a $m$-dimensional vector $\gamma^{(i)}$ ($m$ is the number of traning examples), and $\gamma^{(i)}_j$ will be the coefficient of $\phi(x^{(j)})$. $\theta^{(0)}$ can be represented as $\lambda^{(0)} = \vec{0}$.
+            In practice, the vector can be implemented as a variable-length list. Then $\theta^{(0)}$ will just be an empty list.
+        \item To compute $(\theta^{(i)})^T\phi(x^{(i+1)})$, You first compute $K_j = K(x^{(j)}, x^{(i+1)})$ for each $j$, then compute $g((\lambda^{(i)})^T K)$. Note a list implementation can be more efficient.
+        \item Consider $\lambda^{(i+1)}$. First set $\lambda^{(i+1)} = \lambda^{(i)}$, and then set $\lambda^{(i+1)}_{i+1} = \alpha(y^{(i+1)} - g((\theta^{(i)})^Tx^{(i+1)})$. 
+
+    \end{enumerate}
+\end{answer}

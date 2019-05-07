@@ -1,0 +1,15 @@
+\begin{answer}
+
+The gradient of the log likelihood is given by:
+
+$$
+    l(\theta) = X^T(\vec{y} - g(X\theta))
+$$
+
+    For the best $\theta$, we will have $X^T\vec{y} = X^Th_\theta(X)$. If we only consider the first row of $X^T$, we will find
+
+    $$
+    \sum_{i=1}^my^{(i)} = \sum_{i=1}^m h_\theta(x^{(i)})
+    $$
+which directly shows the result we want to prove.
+\end{answer}

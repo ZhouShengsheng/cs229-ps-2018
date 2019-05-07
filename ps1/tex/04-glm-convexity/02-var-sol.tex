@@ -1,2 +1,22 @@
 \begin{answer}
+    We have
+
+$$
+\begin{aligned}
+\frac{\partial }{\partial^2 \eta}\int
+p(y;\eta)dy &= \frac{\partial}{\partial \eta}\int\frac{\partial}{\partial \eta }p(y;\eta)dy\\
+&= \frac{\partial}{\partial \eta}\int (y - a'(\eta))b(y) \exp(\eta y - a(\eta))dy\\
+&= \frac{\partial}{\partial \eta}\int yb(y)  \exp(\eta y - a(\eta))dy - a''(\eta)\\
+&= \int (y^2 - a'(\eta)) \exp(\eta y - a(\eta))dy = a''(\eta)\\
+&= E[y^2;\eta] - E[y;\eta]^2 - a''(\eta)\\
+&= Var(y;\eta) - a''(\eta) = 0
+\end{aligned}
+$$
+
+And thus
+
+$$
+Var(y;\eta) = a''(\eta)
+$$
+
 \end{answer}

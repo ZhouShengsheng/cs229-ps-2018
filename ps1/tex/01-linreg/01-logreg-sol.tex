@@ -1,2 +1,15 @@
 \begin{answer}
+    Note
+    $$
+    \frac{\partial J(\theta)}{\partial \theta_j} = -\frac{1}{m}\sum_{i=1}^m (y^{(i)} - g(\theta^Tx^{(i)})x^{(i)}_j\\
+\frac{\partial J(\theta)}{\partial \theta_j\partial \theta_k} = \frac{1}{m}\sum_{i=1}^m g(\theta^Tx^{(i)})(1- (\theta^Tx^{(i)})x^{(i)}_jx^{(i)}_k\\
+$$
+
+And thus, for any $z$, 
+$$
+    \begin{aligned}
+z^THz &= \frac{1}{m}\sum_{i=1}^m \sum_{j, k=1}^mg(\theta^Tx^{(i)})(1 - g(\theta^Tx^{(i)}))x_j^{(i)}x_k{^{(i)}} z_j z_k\\
+        &= \frac{1}{m}\sum_{i=1}^m \sum_{j, k=1}^mg(\theta^Tx^{(i)})(1 - g(\theta^Tx^{(i)}))((x^{(i)})^Tz)^2 \ge 0
+    \end{aligned}
+$$
 \end{answer}

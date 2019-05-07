@@ -1,2 +1,31 @@
 \begin{answer}
+    Clearly,
+
+    $$
+\begin{aligned}
+l(\theta) &= -\sum_{i=1}^m \log p(y^{(i)}|x^{(i)}, \theta)\\
+& = -\sum_{i=1}^m \log b(y^{(i)}) +  y^{(i)}\theta^Tx^{(i)} -  a(\theta^Tx^{(i)})
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+H_{jk} &= \frac{\partial l(\theta)}{\partial \theta_j\partial \theta_k} \\
+&= \sum_{i=1}^ma''(\theta^Tx^{(i)})x^{(i)}_jx^{(i)}_k
+\end{aligned}
+$$
+
+Then for any $z$, 
+
+$$
+\begin{aligned}
+z^THz &= \sum_{j,k=1}^nz_j(\sum_{i=1}^m a''(\theta^Tx^{(i)})x_j^{(i)}x_k^{(i)} )z_k\\
+&= \sum_{j,k=1}^n\sum_{i=1}^m a''(\theta^Tx^{(i)})x_j^{(i)}x_k^{(i)} z_kz_j\\
+&= \sum_{j,k=1}^n\sum_{i=1}^m a''(\theta^Tx^{(i)})(z^Tx)^2\\
+\end{aligned}
+$$
+
+    Since $a''(\theta^Tx^{(i)})$ is $Var(y|x;\theta)$ and thus is non-negative, $z^THz\ge 0$ will always be true. So $l$ is convex.
 \end{answer}
