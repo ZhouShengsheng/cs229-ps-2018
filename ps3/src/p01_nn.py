@@ -40,6 +40,20 @@ def optimal_step_weights():
     w = example_weights()
 
     # *** START CODE HERE ***
+    w['hidden_layer_0_1'] = 0.5
+    w['hidden_layer_1_1'] = -1
+    w['hidden_layer_2_1'] = 0
+    w['hidden_layer_0_2'] = 0.5
+    w['hidden_layer_1_2'] = 0
+    w['hidden_layer_2_2'] = -1
+    w['hidden_layer_0_3'] = -4
+    w['hidden_layer_1_3'] = 1
+    w['hidden_layer_2_3'] = 1
+
+    w['output_layer_0'] = -0.5
+    w['output_layer_1'] = 1
+    w['output_layer_2'] = 1
+    w['output_layer_3'] = 1
     # *** END CODE HERE ***
 
     return w

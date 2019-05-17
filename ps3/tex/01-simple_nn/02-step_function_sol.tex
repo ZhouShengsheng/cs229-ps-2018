@@ -1,2 +1,29 @@
 \begin{answer}
+    It is possible. Three lines can be used to determine the decision boundary. The three lines are
+    $$
+    \begin{aligned}
+        x_1 = 0.5\\
+        x_2 = 0.5\\
+        x_1 + x_2 = 4
+    \end{aligned}
+    $$
+
+    If we make 
+
+    $$
+    \begin{aligned}
+        h_1 = 1 \Leftrightarrow x_1 \le 0.5\\
+        h_2 = 1 \Leftrightarrow x_2 \le 0.5\\
+        h_3 = 1 \Leftrightarrow x_1 + x_2 \ge 4
+    \end{aligned}
+    $$
+
+    And 
+
+    $$
+        o = 1 \Leftrightarrow h_1 + h_2 + h_3 \ge 1
+        $$
+    Then $o = 1$ if and only if the points are not in the triangle region. The weights can then be determined using these equations.
+
+
  \end{answer}

@@ -1,2 +1,20 @@
 \begin{answer}
+    I think this is not generally true if you define $l(x, y, \theta) = p(x, y;\theta)$ and consider multiple $x^{(i)}, y^{(i)}$'s. However, if $x$ is fixed, and you are trying to maximize the conditional likelihood $l(y, \theta) = p(y|x; \theta)$ this is true. For convenience we consider a single example $y$.
+
+The natural gradient update rule is given by
+$$
+\theta := \theta+ \alpha \mathcal {I(\theta)}^{-1} \nabla_{\theta}l(y, \theta)
+$$
+And Newton's rule gives
+$$
+\theta := \theta - H^{-1}\nabla_{\theta}l(y;\theta)
+$$
+Note that
+$$
+\mathcal I(\theta)^{-1} = E_{y\sim p(y|x;\theta)}[-\nabla_{\theta}^2 l(y;\theta)] =  E_{y\sim p(y|x;\theta}[-H^{-1}]
+$$
+As we see in problem set 1, in generalized linear model, $H$ is only dependent on $x$ but not $y$. So $\mathcal I(\theta) = - H^{-1}$, which proves the results.
+
+
+
 \end{answer}

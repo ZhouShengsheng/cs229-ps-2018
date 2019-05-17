@@ -1,2 +1,15 @@
 \begin{answer}
+
+    Note that 
+
+    $$
+    \begin{aligned}
+        D_{KL}(P\|Q)  &= E_{x \sim P(x)}(\log \frac{P(x)}{Q(x)}) \\
+        &= -E_{x\sim P(x)}(\log\frac{Q(x)}{P(x)})\\
+        &\ge -\log E_{x\sim P(X)}(\frac{Q(x)}{P(x)})    = -\log 1 = 0
+    \end{aligned}
+    $$
+
+    The inequality becomes equality only when $Q(x) / P(x) = c$ is a constant. And this implies that $Q(x) = P(x)$.
+
 \end{answer}

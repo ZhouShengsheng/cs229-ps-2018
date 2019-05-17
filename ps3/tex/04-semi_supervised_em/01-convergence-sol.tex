@@ -1,2 +1,14 @@
 \begin{answer}
+    This is trivial from
+
+$$
+\begin{aligned}
+l_{semi-sup}(\theta^{(t)}) &= \sum_{i=1}^m  \sum_{z^{(i)}}Q_{i}(z^{(i)})\log\frac{p(x^{(i)}, z^{(i)}; \theta^{(t)})}{Q_i(z^{(i)})} +\alpha l_{sup}(\theta^{(t)})\\
+&\le  \sum_{i=1}^m  \sum_{z^{(i)}}Q_{i}(z^{(i)})\log\frac{p(x^{(i)}, z^{(i)}; \theta^{(t + 1)})}{Q_i(z^{(i)})}+ \alpha l_{sup}(\theta^{(t + 1)})\\
+&\le l_{unsup}(\theta^{(t + 1)}) + \alpha l_{sup}(\theta^{(t + 1)})
+= l_{semi-sup}(\theta^{t+1})
+\end{aligned}
+$$
+
+The first line and third line come from Jensen's inequality, and the second line comes from maximization.
  \end{answer}

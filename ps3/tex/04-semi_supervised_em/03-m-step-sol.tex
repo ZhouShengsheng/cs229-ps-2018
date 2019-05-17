@@ -1,2 +1,47 @@
 \begin{answer}
+    For convenience we define
+$$
+\tilde w^{(i)}_j = 1\{\tilde z^{(i)} = j\}
+$$
+From the lecture note, we should easily derive the derivative from $\mu_j$ as
+$$
+\begin{aligned}
+\nabla_{\mu_j}l &= \sum_{i=1}^m w^{(i)}_j \Sigma_j^{-1}(x^{(i)} - \mu_j) + \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j \Sigma_j^{-1}(\tilde x^{(i)} - \mu_j)
+\end{aligned}
+$$
+Setting this to zero, we get
+$$
+\mu_j = \frac{\sum_{i=1}^m w^{(i)}_j x^{(i)}+ \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j\tilde x^{(i)}}{\sum_{i=1}^m w^{(i)}_j + \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j}
+$$
+Similarly,
+$$
+\Sigma_j = \frac{\sum_{i=1}^m w^{(i)}_j (x^{(i)} - \mu_j)(x^{(i)} - \mu_j)^T+ \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j (\tilde x^{(i)} - \mu_j)(\tilde x^{(i)} - \mu_j)^T}{\sum_{i=1}^m w^{(i)}_j + \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j}
+$$
+For $\phi$, we need to maximize
+$$
+\sum_{i=1}^m\sum_{j=1}^kw^{(i)}_j \log \phi_j + \alpha\sum_{i=1}^{\tilde m}\sum_{j=1}^k\tilde w^{(i)}_j \log \phi_j
+$$
+subjective to
+$$
+\sum_{j=1}^k \phi_j = 1
+$$
+We construct the Lagrangian
+$$
+    \mathcal L(\phi, \beta) =\sum_{i=1}^m\sum_{j=1}^kw^{(i)}_j \log \phi_j + \alpha\sum_{i=1}^{\tilde m}\sum_{j=1}^k\tilde w^{(i)}_j \log \phi_j + \beta(1 - \sum_{j=1}^k \phi_j)
+$$
+And derivetive for
+$$
+    \frac{\partial\mathcal L}{\partial \phi_j} = \sum_{i=1}^m\frac{w^{(i)}_j}{\phi_j} + \alpha \sum_{i=1}^{\tilde m}\frac{\tilde w^{(i)}_j}{\phi_j} - \beta
+$$
+Set it to zero we get
+$$
+    \phi_j = \frac{\sum_{i=1}^mw^{(i)}_j + \alpha \sum_{i=1}^{\tilde m}{\tilde w}^{(i)}_j}{\beta}
+$$
+Considering the constraint $\sum_{j=1}^k \phi_j = 1$, we get $\beta = m + \alpha \tilde m$. So
+$$
+    \phi_j = \frac{\sum_{i=1}^mw^{(i)}_j + \alpha \sum_{i=1}^{\tilde m}\tilde w^{(i)}_j}{m + \alpha \tilde m}
+$$
+
+
+
 \end{answer}

@@ -1,2 +1,34 @@
 \begin{answer}
+    Let $l^{(i)} = (o^{(i)} - y^{(i)})^2$. Then
+
+    $$
+    \frac{\partial l}{\partial w^{[1]}_{1, 2}} = \frac{1}{m}\Sigma_{i=1}^m\frac{\partial l^{(i)}}{\partial w^{[1]}_{1, 2}}
+    $$
+
+    Note that $w^{[1]}_{1, 2}$ is only affecting $h_2^{(i)}$. And thus
+    $$
+    \frac{\partial l^{(i)}}{\partial w^{[1]}_{1,2}} = \frac{\partial l^{(i)}}{\partial o^{(i)}}\frac{\partial o^{(i)}}{\partial h_2^{(i)}}\frac{\partial h_2^{(i)}}{\partial w^{[1]}_{1, 2}}
+    $$
+
+    $$
+\frac{\partial l^{(i)}}{\partial w^{[1]}_{1,2}} = \frac{\partial l^{(i)}}{\partial o^{(i)}}\frac{\partial o^{(i)}}{\partial h_2^{(i)}}\frac{\partial h_2^{(i)}}{\partial w^{[1]}_{1, 2}}
+$$
+
+Since $l^{(i)} = (o^{(i)} - y^{(i)})^2$,
+$$
+\frac{\partial l^{(i)}}{\partial o^{(i)}} = 2(o^{(i)} - y^{(i)})
+$$
+Since $o^{(i)} = \sigma(w^{[2]}_0 + w^{[2]}_1 h_1^{(i)} + w_2^{[2]}h_2^{(i)} + w_3^{[3]}h_3^{(i)})$ ,
+$$
+\frac{\partial o^{(i)}}{\partial h_2^{(i)}} = o^{(i)}(1 - o^{(i)})w_2^{[2]}
+$$
+And since $h_2^{(i)} = \sigma(w^{[1]}_{0, 2}  + w^{[1]}_{1, 2}x^{(i)}_1+ w^{[1]}_{2, 2}x^{(i)}_2)$,
+$$
+\frac{\partial h_2^{(i)}}{\partial w^{[1]}_{1, 2}} = h_2^{(i)}(1- h_2^{(i)}) x_1^{(i)}
+$$
+Combining them we get
+$$
+\frac{\partial l}{\partial w^{[1]}_{1, 2}} = \sum_{i=1}^m 2(o^{(i)} - y^{(i)})o^{(i)}(1 -  o^{(i)})\sigma(w^{[1]}_{0, 2}  + w^{[1]}_{1, 2}x^{(i)}_1+ w^{[1]}_{2, 2}x^{(i)}_2)(1 - \sigma(w^{[1]}_{0, 2}  + w^{[1]}_{1, 2}x^{(i)}_1+ w^{[1]}_{2, 2}x^{(i)}_2))w_2^{[2]}x_1^{(i)}
+$$
+        
  \end{answer}

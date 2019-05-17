@@ -1,2 +1,42 @@
 \begin{answer}
+    Since
+$$
+l(\theta+ d) \approx \log p(y;\theta) + d^T\nabla_{\theta'}\log p(y;\theta')|_{\theta' =\theta}
+$$
+We can construct the Lagrangian for this optimization problem as
+$$
+\begin{aligned}
+\mathcal L(d, \lambda) &= l(\theta+d)  - \lambda[D_{KL}(p_{\theta}\|p_{\theta' + d}) - c]\\
+&= \log p(y;\theta) + d^T\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta} - \lambda[\frac{1}{2}d^T\mathcal I(\theta)d - c]
+\end{aligned}
+$$
+The sufficient condition for maximization is
+$$
+\begin{aligned}
+\frac{\partial \cal L}{\partial d} &=  \nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta} - \lambda \mathcal I(\theta)d\\
+\frac{\partial \cal L}{\partial \lambda} &= \frac{1}{2}d^T\mathcal I(\theta) d - c
+\end{aligned}
+$$
+Setting the first to be zero, we get
+$$
+d = \frac{1}{\lambda}\mathcal I(\theta)^{-1}\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}
+$$
+So our unscaled natural gradient is then
+$$
+\tilde d = \mathcal I(\theta)^{-1} \nabla_{\theta'}\log p(y;\theta')|_{\theta'  = \theta}
+$$
+Now, plug $d$ into the second formula and set it to zero, we get
+$$
+\frac{1}{2}(\frac{1}{\lambda}\mathcal I(\theta)^{-1}\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta})^T\mathcal I(\theta) (\frac{1}{\lambda}\mathcal I(\theta)^{-1}\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}) = c
+$$
+or
+$$
+\lambda = \sqrt{\frac{1}{2c}(\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta})^T\mathcal I(\theta)^{-1} (\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta})}
+$$
+Thus, the final $d^*$ is given by
+$$
+d^{*} =\sqrt{\frac{2c}{(\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta})^T\mathcal I(\theta)^{-1} (\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta})}}\mathcal I(\theta)^{-1}\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}
+$$
+
+
  \end{answer}

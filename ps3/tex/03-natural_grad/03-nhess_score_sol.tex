@@ -1,2 +1,11 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+&E_{y\sim p(y;\theta)}[ - \nabla^2_{\theta'}\log p(y;\theta')|_{\theta' = \theta}]\\
+&=E_{y\sim p(y;\theta)}[-\nabla_{\theta'}(\frac{1}{p(y;\theta') }\nabla_{\theta' }p(y;\theta'))|_{\theta' = \theta}]\\
+&= E_{y\sim p(y;\theta)}[\frac{\nabla_{\theta'}p(y;\theta')\nabla_{\theta'}p(y;\theta')}{p(y;\theta')^2} - \frac{1}{p(y;\theta')}\nabla_{\theta'}^2 p(y;\theta')]\\
+&= E_{y\sim p(y;\theta)}[\nabla_{\theta'}\log p(y;\theta')\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}] + \int_{-\infty}^{\infty}\nabla_{\theta}^2 p(y;\theta) dy\\
+&= E_{y\sim p(y;\theta)}[\nabla_{\theta'}\log p(y;\theta')\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}] = \cal I(\theta)
+\end{aligned}
+$$
 \end{answer}

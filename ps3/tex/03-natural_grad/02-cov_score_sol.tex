@@ -1,2 +1,16 @@
 \begin{answer}
+    This is trivial from the definition the a covariance matrix for a random variable $X$:
+    $$
+    Cov(X) = E[(X - E[X])(X - E[X])^T]
+    $$
+
+    In this case, $E(X) = 0$ for $X = \nabla_{\theta'}\log p(y;\theta') |_{\theta'=\theta}$. And thus
+    $$
+    \begin{aligned}
+        \mathcal I(\theta) &= Cov_{y\sim p(y;\theta)}[\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}] \\
+        &= E_{y\sim p(y;\theta)}[(\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta} - 0)(\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta} - 0)^T]\\
+        &= E_{y\sim p(y;\theta)}[\nabla_{\theta'}\log p(y;\theta')\nabla_{\theta'}\log p(y;\theta')^T|_{\theta' = \theta}]\\
+    \end{aligned}
+    $$
+
 \end{answer}

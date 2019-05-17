@@ -1,2 +1,12 @@
 \begin{answer}
+We have
+
+$$
+\begin{aligned}
+D_{KL }(p_\theta\|p_{\tilde \theta})&\approx D_{KL}(p_\theta\| p_{\theta}) + (\tilde \theta - \theta)^T\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta} + \frac{1}{2}(\tilde \theta - \theta)^T\nabla_{\theta'}^2\log p(y;\theta')|_{\theta' = \theta}
+(\tilde \theta - \theta)\\
+&= 0 + (\tilde \theta - \theta)^T E_{y\sim p(y;\theta)}[-\nabla_{\theta'}\log p(y;\theta')|_{\theta' = \theta}] + \frac{1}{2}(\tilde \theta - \theta)^T E_{y\sim p(y;\theta)}[-\nabla_{\theta'}^2\log p(y;\theta')|_{\theta' = \theta}](\tilde \theta - \theta)\\
+&= \frac{1}{2}d^T\mathcal I(\theta) d
+\end{aligned}
+$$
 \end{answer}

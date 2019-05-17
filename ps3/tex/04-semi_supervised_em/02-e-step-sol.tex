@@ -1,2 +1,14 @@
 \begin{answer}
+In the E-step, we need to re-estimate $z^{(i)}$ for $i = 1, \ldots, m$. Specifically, we set
+$$
+\begin{aligned}
+w^{(i)}_j &= Q_i(z^{(i)} = j)\\
+&= p(z^{(i)} = j|x^{(i)}; \phi, \mu, \Sigma)\\
+&= \frac{p(x^{(i)}|z^{(i)} = j)p(z^{(i)} =j)}{\sum_{l=1}^k p(x^{(i)}|z^{(i)} = l)p(z^{(i)} = l)}\\
+&= \frac{\frac{1}{(2\pi)^{n/2}|\Sigma_j|^{1/2}}\exp(-\frac{1}{2}(x^{(i)} - \mu_j)^T\Sigma_j^{-1}(x^{(i)} - \mu_j))\phi_j}{\sum_{l=1}^k\frac{1}{(2\pi)^{n/2}|\Sigma_l|^{1/2}}\exp(-\frac{1}{2}(x^{(i)} - \mu_l)^T\Sigma_l^{-1}(x^{(i)} - \mu_l))\phi_l}
+\end{aligned}
+$$
+
+
+
 \end{answer}
