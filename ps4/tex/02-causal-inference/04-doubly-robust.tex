@@ -1,0 +1,15 @@
+\item  \subquestionpoints{7} \textbf{Doubly Robust}: One final commonly used estimator is the doubly robust estimator. The doubly robust estimator has the form: 
+
+$$\E_{\substack{s\sim p(s) \\ a \sim \pi_0(s, a)}}
+(
+(
+\E_{\substack{a \sim \pi_1(s, a)}} \hat{R}(s, a)
+) + 
+\frac{\pi_1(s, a)}{\hat{\pi}_0(s, a)}  (R(s, a) - \hat{R}(s, a)))$$
+
+One advantage of the doubly robust estimator is that it works if either $\hat{\pi}_0 = \pi_0$ or $\hat{R}(s, a) = R(s, a)$
+
+\begin{enumerate}[label=\roman*.]
+\item \subquestionpoints{4} Please show that the doubly robust estimator is equal to $\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$ when $\hat{\pi}_0 = \pi_0$
+\item \subquestionpoints{3} Please show that the doubly robust estimator is equal to $\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$ when $\hat{R}(s, a) = R(s, a)$
+\end{enumerate}

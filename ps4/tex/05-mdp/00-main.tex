@@ -1,0 +1,37 @@
+\clearpage
+\item \points{15} {\bf Markov decision processes}
+
+Consider an MDP with finite state and action spaces, and discount
+factor $\gamma < 1$.  Let $B$ be the Bellman update operator with
+$V$ a vector of values for each state. I.e., if $V' = B(V)$, then
+\[
+V'(s) = R(s) + \gamma \max_{a\in A} \sum_{s'\in S} P_{sa}(s')
+V(s').
+\]
+
+\begin{enumerate}
+\item \points{10} Prove that, for any two finite-valued vectors $V_1$, 
+$V_2$, it
+holds true that
+\[
+   ||B(V_1) - B(V_2)||_\infty \leq \gamma ||V_1 - V_2||_\infty.
+\]
+where
+\[
+   ||V||_\infty = \max_{s \in S} |V(s)|.
+\]
+(This shows that the Bellman update operator is a
+``$\gamma$-contraction in the max-norm.'')
+
+\item \points{5} We say that $V$ is a {\bf fixed point} of $B$ if
+$B(V) = V$. Using the fact that the Bellman update operator is a
+$\gamma$-contraction in the max-norm, prove that $B$ has at most
+one fixed point---i.e., that there is at most one solution to the
+Bellman equations.  You may assume that $B$ has at least one fixed
+point.
+
+\end{enumerate}
+
+\textbf{Remark:} The result you proved in part(a) implies that value iteration converges geometrically to the optimal value function $V^*$. That is, after $k$ iterations, the distance between $V$ and $V^*$ is at most $\gamma^k$.
+
+\input{05-mdp/00-main-sol.tex}

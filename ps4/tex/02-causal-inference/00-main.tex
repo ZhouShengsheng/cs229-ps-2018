@@ -1,0 +1,63 @@
+\clearpage
+\item \points{15} {\bf Off Policy Evaluation And Causal Inference}
+
+In class we have discussed Markov decision processes (MDPs), methods for learning MDPs from data, and ways to compute optimal policies from that MDP. However, before we use that policy, we often want to get an estimate of the its performance. In some settings such as games or simulations, you are able to directly implement that policy and directly measure the performance, but in many situations such as health care implementing and evaluating a policy is very expensive and time consuming.
+
+Thus we need methods for evaluating policies without actually implementing them. This task is usually referred to as off-policy evaluation or causal inference. In this problem we will explore different ways of estimating off policy performance and prove some of the properties of those estimators.
+
+Most of the methods we discuss apply to general MDPs, but for the sake of this problem, we will consider MDPs with a single timestep. We consider a universe consisting of states $S$, actions $A$, a reward function $R(s, a)$ where $s$ is a state and $a$ is an action. One important factor is that we often only have a subset of $a$ in our dataset. For example, each state $s$ could represent a patient, each action $a$ could represent which drug we prescribe to that patient and $R(s, a)$ be their lifespan after prescribing that drug.
+
+A policy is defined by a function $\pi_i(s, a) = p(a | s, \pi_i)$. In other words, $\pi_i(s, a)$ is the conditional probability of an action given a certain state and a policy.
+
+We are given an observational dataset consisting of $(s, a, R(s, a))$ tuples. 
+
+Let $p(s)$ denote the probability density function for the distribution of state $s$ values within that dataset. Let $\pi_0(s, a) =  p(a | s)$ within our observational data. $\pi_0$ corresponds to the baseline policy present in our observational data. Going back to the patient example, $p(s)$ would be the probability of seeing a particular patient $s$ and $\pi_0(s, a)$ would be the probability of a patient receiving a drug in the observational data. 
+
+We are also given a target policy $\pi_1(s, a)$ which gives the conditional probability $p(a | s)$ in our optimal policy that we are hoping to evaluate. One particular note is that even though this is a distribution, many of the policies that we hope to evaluate are deterministic such that given a particular state $s_i$, $p(a | s_i) = 1$ for a single action and $p(a | s) = i$ for the other actions.
+
+Our goal is to compute the expected value of $R(s, a)$ in the same population as our observational data, but with a policy of $\pi_1$ instead of $\pi_0$. In other words, we are trying to compute:
+
+$$\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$$
+
+\textbf{Important Note About Notation And Simplifying Assumptions:}  
+
+We haven't really covered expected values over multiple variables such as $\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$ in class yet. For the purpose of this question, you may make the simplifying assumption that our states and actions are discrete distributions. This expected value over multiple variables simply indicates that we are taking the expected value over the joint pair (s, a) where s comes from p(s) and a comes from $\pi_1(s, a)$. In other words, you have a $p(s, a)$ term which is the probabilities of observing that pair and we can factorize that probability to $p(s) p(a|s) = p(s) \pi_1(s, a)$. In math notation, this can be written as:
+
+\begin{align*}
+\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a) &= \sum_{(s, a)} R(s, a) p(s, a) \\
+&= \sum_{(s, a)} R(s, a) p(s) p(a | s) \\
+&= \sum_{(s, a)} R(s, a) p(s) \pi_1(s, a)
+\end{align*}
+
+
+
+Unfortunately, we cannot estimate this directly as we only have samples created under policy $\pi_0$ and not $\pi_1$. For this problem, we will be looking at formulas that approximate this value using expectations under $\pi_0$ that we can actually estimate.
+
+We will make one additional assumption that each action has a non-zero probability in the observed policy $\pi_0(s, a)$. In other words, for all actions $a$ and states $s$, $\pi_0(s, a) > 0$.
+
+ \textbf{Regression:} The simplest possible estimator is to directly use our learned MDP parameters to estimate our goal. This is usually called the regression estimator. While training our MDP, we learn an estimator $\hat{R}(s, a)$ that estimates $R(s, a)$. We can now directly estimate $$\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$$ with $$\E_{\substack{s \sim p(s) \\ a \sim \pi_1(s, a)}} \hat{R}(s, a)$$
+ 
+ If $\hat{R}(s, a) = R(s, a)$, then this estimator is trivially correct.
+ 
+ 
+ We will now consider alternative approaches and explore why you might use one estimator over another.
+
+\begin{enumerate}
+
+    \input{02-causal-inference/01-importance-sampling}
+    \input{02-causal-inference/01-importance-sampling-sol}
+
+    \input{02-causal-inference/02-weighted-importance-sampling}
+    \input{02-causal-inference/02-weighted-importance-sampling-sol}
+
+    \input{02-causal-inference/03-weighted-importance-sampling-issue}
+    \input{02-causal-inference/03-weighted-importance-sampling-issue-sol}
+
+    \input{02-causal-inference/04-doubly-robust}
+    \input{02-causal-inference/04-doubly-robust-sol}
+
+    \input{02-causal-inference/05-correct-method}
+    \input{02-causal-inference/05-correct-method-sol}
+
+
+\end{enumerate}

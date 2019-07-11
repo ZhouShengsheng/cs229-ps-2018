@@ -1,0 +1,4 @@
+\item  \subquestionpoints{2} \textbf{Importance Sampling:}  One commonly used estimator is known as the importance sampling estimator. Let $\hat{\pi}_0$ be an estimate of the true $\pi_0$. The importance sampling estimator uses that $\hat{\pi}_0$ and has the form: $$\E_{\substack{s\sim p(s) \\ a \sim \pi_0(s, a)}} \frac{\pi_1(s, a)}{\hat{\pi}_0(s, a)}  R(s, a)$$ Please show that if $\hat{\pi}_0 = \pi_0$, then the importance sampling estimator is equal to: 
+$$\E_{\substack{s\sim p(s) \\ a \sim \pi_1(s, a)}} R(s, a)$$
+
+  Note that this estimator only requires us to model $\pi_0$ as we have the $R(s, a)$ values for the items in the observational data.
