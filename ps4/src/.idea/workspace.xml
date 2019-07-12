@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4364c1c9-7734-43e3-910a-1c7a1a5460f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/output/split_0.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output/split_0.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/split_1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output/split_1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/split_2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output/split_2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/split_3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output/split_3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/split_4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output/split_4.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/train.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/output/train.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p1_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1_nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p4_ica.py" beforeDir="false" afterPath="$PROJECT_DIR$/p4_ica.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p4_ica2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/00-main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/00-main.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/01-importance-sampling-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/01-importance-sampling-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/02-weighted-importance-sampling-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/02-weighted-importance-sampling-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/03-weighted-importance-sampling-issue-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/03-weighted-importance-sampling-issue-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/04-doubly-robust-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/04-doubly-robust-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/02-causal-inference/05-correct-method-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/02-causal-inference/05-correct-method-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/03-pca/00-main-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/03-pca/00-main-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/04-ica/01-gaussian-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/04-ica/01-gaussian-sol.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/04-ica/02-laplace-sol.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/04-ica/02-laplace-sol.tex" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="338444117">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="3985" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="3985" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/p4_ica.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/p1_nn.py" />
+        <option value="$PROJECT_DIR$/p4_ica.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="685" />
+    <option name="width" value="681" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4364c1c9-7734-43e3-910a-1c7a1a5460f7" name="Default Changelist" comment="" />
+      <created>1562816516658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562816516658</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Remote Host" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/make_zip.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11206">
+          <caret line="436" column="33" selection-start-line="436" selection-start-column="33" selection-end-line="436" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p4_ica.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,2 +1,28 @@
 \begin{answer}
+    In this case
+$$
+l(W) = \sum_{i=1}^m(\log |W| + \sum_{j=1}^m(-\log 2 - |w^T_jx^{(i)}|))
+$$
+and
+$$
+\begin{aligned}
+\nabla_Wl(W) &= \sum_{i=1}^m (W^{-T} -  l^{(i)}x^{(i)T})
+\end{aligned}
+$$
+Where $l^{(i)}$ is an indicator vector:
+$$
+l^{(i)}_j = \begin{cases}
+1, &w_j^Tx^{(i)} >0\\
+-1, &w^T_jx^{(i)}\le 0
+\end{cases}
+$$
+And we can simplify this to
+$$
+\nabla_Wl(W) = mW^{-T} - LX
+$$
+where the $i$-th column of $L$ is $l^{(i)}$. And the update rule for a single example:
+$$
+W:= W + \alpha(W^{-T}  - lx^T)
+$$
+where $l$ is as defined above.
 \end{answer}

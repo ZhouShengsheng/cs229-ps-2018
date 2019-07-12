@@ -1,3 +1,35 @@
 
 \begin{answer}
+\begin{enumerate}
+    \item 
+        For any $s$,
+$$
+\begin{aligned}
+|B(V_1)(s) - B(V_2)(s)| &= \gamma |\max_{a\in A} \sum_{s'\in S}P_{sa}(s')V_1(s') - \max_{a\in A} \sum_{s' \in S}P_{sa}(s') V_2(s')|\\
+&\le \gamma \max_{a\in A}|\sum_{s'\in S}P_{sa}(s')V_1(s') - \sum_{s' \in S}P_{sa}(s')V_2(s')|\\
+&= \gamma \max_{a\in A}|\sum_{s'\in S}P_{sa}(s')(V_1(s') - V_2(s'))|\\
+&\le \gamma \max_{a\in A}\sum_{s'\in S}P_{sa(s')}\|V_1 - V_2\|_{\infty}\\
+&= \gamma \|V_1 -V_2\|_\infty \max_{a\in A}\sum_{s'\in S}P_{sa}(s')\\
+&= \gamma \|V_1 - V_2\|_{\infty}
+\end{aligned}
+$$
+Since this is true for any $s$, we get
+$$
+\|B(V_1) - B(V_2)\|_\infty \le \gamma \|V_1 - V_2\|_\infty
+$$
+
+\item 
+
+    Suppose that $V_1$ and $V_2$ are two fixed points, then
+$$
+\|V_1 - V_2\|_\infty = \|B(V_1) - B(V_2)\|_\infty \le \gamma \|V_1 - V_2\|_\infty
+$$
+This is true only when $\|V_1 - V_2\|_\infty = 0$, or $V_1 = V_2$. So fixed point is unique.
+
+
+
+
+
+
+\end{enumerate}
 \end{answer}

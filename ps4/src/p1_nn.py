@@ -16,7 +16,6 @@ def forward_softmax(x):
     You will know that your function is overflow resistent when it can handle input like:
     np.array([[10000, 10010, 10]]) without issues.
 
-    Args:
         x: A 1d numpy float array of shape number_of_classes
 
     Returns:
@@ -35,24 +34,20 @@ def backward_softmax(x, grad_outputs):
 
     Args:
         x: A 1d numpy float array of shape number_of_classes
-        grad_outputs: A 1d numpy float array of shape number_of_classes 
+        grad_outputs: A 1d numpy float array of shape number_of_classes
 
     Returns:
         A 1d numpy float array of the same shape as x with the derivative of the loss with respect to x
     """
     
     # *** START CODE HERE ***
-    s = forward_softmax(x)
-    q = 1-s
-    dx = np.multiply(s,q)
-    grad_sum = np.sum(grad_outputs)
-    return grad_sum * dx
-    # exp = np.exp(x)
-    # exp_sum = np.sum(exp,axis=0)
-    # num = exp*exp_sum - np.square(exp)
-    # dx = num/(exp_sum**2)
-    # return np.multiply(dx,grad_outputs) #(10,1)
+    y = forward_softmax(x)
+    dy_dx = np.diag(y) - np.outer(y, y)
+    dL_dx = dy_dx.dot(grad_outputs)
+    
+    return dL_dx
     # *** END CODE HERE ***
+
 
 def forward_relu(x):
     """
@@ -81,12 +76,9 @@ def backward_relu(x, grad_outputs):
         A numpy array of the same shape as x containing the gradients with respect to x.
     """
     # *** START CODE HERE ***
-    reshaped = np.reshape(np.array(grad_outputs),x.shape)
-    dx = np.zeros(x.shape)
-    dx[x > 0] = 1
-    #Need this gradient to be (2,5,5)
-    return np.multiply(dx,reshaped)
+    return grad_outputs * (x >= 0)
     # *** END CODE HERE ***
+
 
 
 def get_initial_params():
@@ -104,7 +96,7 @@ def get_initial_params():
 
     Weight matrices should be initialized with values drawn from a random normal distribution.
     The mean of that distribution should be 0.
-    The variance of that distribution should be 1/sqrt(n) where n is the number of neurons that 
+    The variance of that distribution should be 1/sqrt(n) where n is the number of neurons that
     feed into an output for that layer.
 
     Bias vectors should be initialized with zero.
@@ -172,27 +164,25 @@ def backward_convolution(conv_W, conv_b, data, output_grad):
     """
 
     # *** START CODE HERE ***
-    conv_width = conv_W.shape[2]
-    conv_height = conv_W.shape[3]
-    input_width = data.shape[1]
-    input_height = data.shape[2]
-    out_channels = conv_W.shape[0]
-    partial_x = np.zeros(data.shape)
-    partial_w = np.zeros(conv_W.shape)
-    partial_b = np.zeros(conv_b.shape)
-    for x in range(input_width - conv_width + 1):
-        for y in range(input_height - conv_height + 1):
-            for out_channel in range(out_channels): 
-                partial_b[out_channel] += output_grad[out_channel, x, y]
-                for in_channel in range(data.shape[0]):
-                    for dx in range(conv_width):
-                        for dy in range(conv_height):
-                            partial_x[in_channel, x + dx, y + dy] += conv_W[out_channel, in_channel, dx, dy] * output_grad[out_channel, x, y]
-                            partial_w[out_channel, in_channel, dx, dy] += data[in_channel, x + dx, y + dy]*output_grad[out_channel, x, y]
-
-
-    return (partial_w, partial_b, partial_x)
+    dconv_W = np.zeros_like(conv_W)
+    dconv_b = np.zeros_like(conv_b)
+    ddata = np.zeros_like(data)
+    
+    C_out, C_in, W_conv, H_conv = conv_W.shape
+    _, W_in, H_in = data.shape
+    _, W_out, H_out = output_grad.shape
+    
+    # iterate through each output unit
+    for c in range(C_out):
+        for w in range(W_out):
+            for h in range(H_out):
+                dconv_W[c] += data[:, w:w+W_conv, h:h+H_conv] * output_grad[c, w, h]
+                ddata[:, w:w+W_conv, h:h+H_conv] += conv_W[c] * output_grad[c, w, h]
+                dconv_b[c] += output_grad[c, w, h]
+    return dconv_W, dconv_b, ddata
+    
     # *** END CODE HERE ***
+
 
 def forward_max_pool(data, pool_width, pool_height):
     """
@@ -233,24 +223,24 @@ def backward_max_pool(data, pool_width, pool_height, output_grad):
     Returns:
         The gradient of the loss with respect to the data (of same shape as data)
     """
+    
 
     # *** START CODE HERE ***
-    input_channels = data.shape[0]
-    input_width = data.shape[1]
-    input_height = data.shape[2]
-    partial = np.zeros((input_channels, input_width , input_height))
-    for x in range(0, input_width, pool_width):
-        for y in range(0, input_height, pool_height):
-            #25 iterations
-            window_max = np.amax(data[:, x:(x + pool_width), y:(y + pool_height)], axis=(1, 2))
-            for c in range(input_channels):
-                found_it = False
-                for dx in range(pool_width):
-                    for dy in range(pool_height):
-                        if (data[c,x + dx,y + dy] == window_max[c]) and (found_it == False):
-                            partial[c,x + dx, y + dy] = output_grad[c, x // pool_width, y // pool_height]
-                            found_it = True
-    return partial 
+    ddata = np.zeros_like(data)
+    C, W_out, H_out = output_grad.shape
+    
+    # iterate through each output unit
+    for c in range(C):
+        for w in range(W_out):
+            for h in range(H_out):
+                w_in = w * pool_width
+                h_in = h * pool_height
+                # find the maximium element index
+                index = np.argmax(data[c, w_in:w_in+pool_width, h_in:h_in+pool_height])
+                # propagate gradient
+                ddata[c, w_in:w_in+pool_width, h_in:h_in+pool_height].flat[index] += output_grad[c, w, h]
+    return ddata
+    
     # *** END CODE HERE ***
 
 def forward_cross_entropy_loss(probabilities, labels):
@@ -288,11 +278,7 @@ def backward_cross_entropy_loss(probabilities, labels):
     """
 
     # *** START CODE HERE ***
-    dp = np.zeros(len(labels))
-    for i in range(len(labels)):
-        if probabilities[i] == 0: dp[i] = 0
-        else: dp[i] = -labels[i]/probabilities[i]
-    return dp
+    return - labels / probabilities
     # *** END CODE HERE ***
 
 def forward_linear(weights, bias, data):
@@ -325,10 +311,11 @@ def backward_linear(weights, bias, data, output_grad):
     """
 
     # *** START CODE HERE ***
-    dw = data
-    db = np.ones(len(bias))
-    dx = weights.T 
-    return (np.outer(dw,output_grad.T), np.multiply(db, output_grad), np.dot(dx.T, output_grad))
+    ddata = output_grad.dot(weights.T)
+    dweights = np.outer(data, output_grad)
+    dbias = output_grad
+    
+    return dweights, dbias, ddata
     # *** END CODE HERE ***
 
 
@@ -389,40 +376,30 @@ def backward_prop(data, labels, params):
             W1, W2, b1, and b2
     """
     # *** START CODE HERE ***
-    #w1 is of shape conv_w which is (# output channels, # input channels, convolution width, convolution height )
-    #b1 is of shape conv_b which is (# output channels)
-    #w2 (input # features, output # features), (50,10)
-    #b2 is (output # features), (10,1)
-    conv_W = params['W1'] #conv_W and conv_b eventually become nan...where are these coming from
-    conv_b = params['b1']
-    weights = params['W2']
-    bias = params['b2']
-    first_convolution = forward_convolution(conv_W, conv_b, data)
+
+    first_convolution = forward_convolution(params['W1'], params['b1'], data)
     first_max_pool = forward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE)
     first_after_relu = forward_relu(first_max_pool)
+
     flattened = np.reshape(first_after_relu, (-1))
-    probs = forward_softmax(forward_linear(weights, bias, flattened))
-    #print(flattened)
-    grad_outputs_softmax = backward_cross_entropy_loss(probs, labels)
-    output_grad_linear = backward_softmax(forward_linear(weights, bias, flattened), grad_outputs_softmax)
-    output_grad_relu = backward_linear(weights, bias, flattened, output_grad_linear)[2]
-    output_grad_relu_w = backward_linear(weights, bias, flattened, output_grad_linear)[0]
-    output_grad_relu_b = backward_linear(weights, bias, flattened, output_grad_linear)[1]
-    output_grad_max_pool = backward_relu(forward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE), output_grad_relu)
-    #output_grad_max_pool_b = backward_relu(forward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE), output_grad_relu)
-    output_grad_conv = backward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE, output_grad_max_pool)
-    output_grad_conv = backward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE, output_grad_max_pool)
-    grad_w1 = backward_convolution(conv_W, conv_b, data, output_grad_conv)[0]
-    grad_b1 = backward_convolution(conv_W, conv_b, data, output_grad_conv)[1]
-    grad_w2 = output_grad_relu_w
-    grad_b2 = output_grad_relu_b
-    return_dict = {}
-    return_dict['W1'] = grad_w1
-    return_dict['b1'] = grad_b1
-    return_dict['W2'] = grad_w2
-    return_dict['b2'] = grad_b2
-    return return_dict
+
+    logits = forward_linear(params['W2'], params['b2'], flattened)
+
+    y = forward_softmax(logits)
+    cost = forward_cross_entropy_loss(y, labels)
+    
+    dy = backward_cross_entropy_loss(y, labels)
+    dlogits = backward_softmax(logits, dy)
+    dW2, db2, dflattend = backward_linear(params['W2'], params['b2'], flattened, dlogits)
+    dfirst_after_relu = dflattend.reshape(first_after_relu.shape)
+    dfirst_max_pool = backward_relu(first_max_pool, dfirst_after_relu)
+    dfirst_convolution = backward_max_pool(first_convolution, MAX_POOL_SIZE, MAX_POOL_SIZE, dfirst_max_pool)
+    dW1, db1, ddata = backward_convolution(params['W1'], params['b1'], data, dfirst_convolution)
+    
+    
+    return {'W1': dW1, 'b1': db1, 'W2': dW2, 'b2': db2}
     # *** END CODE HERE ***
+
 
 def forward_prop_batch(batch_data, batch_labels, params, forward_prop_func):
     """Apply the forward prop func to every image in a batch"""
@@ -458,8 +435,8 @@ def gradient_descent_batch(batch_data, batch_labels, learning_rate, params, back
 
     for i in range(batch_data.shape[0]):
         grad = backward_prop_func(
-            batch_data[i, :, :], 
-            batch_labels[i, :], 
+            batch_data[i, :, :],
+            batch_labels[i, :],
             params)
         for key, value in grad.items():
             if key not in total_grad:
@@ -476,9 +453,9 @@ def gradient_descent_batch(batch_data, batch_labels, learning_rate, params, back
     return
 
 def nn_train(
-    train_data, train_labels, dev_data, dev_labels, 
+    train_data, train_labels, dev_data, dev_labels,
     get_initial_params_func, forward_prop_func, backward_prop_func,
-    learning_rate=1e-10, batch_size=16, num_batches=400):
+    learning_rate=5.0, batch_size=16, num_batches=400):
 
     m = train_data.shape[0]
 
@@ -499,7 +476,7 @@ def nn_train(
 
             print('Cost and accuracy', cost_dev[-1], accuracy_dev[-1])
 
-        gradient_descent_batch(batch_data, batch_labels, 
+        gradient_descent_batch(batch_data, batch_labels,
             learning_rate, params, backward_prop_func)
 
     return params, cost_dev, accuracy_dev
@@ -533,10 +510,10 @@ def read_data(images_file, labels_file):
 
 def run_train(all_data, all_labels, backward_prop_func):
     params, cost_dev, accuracy_dev = nn_train(
-        all_data['train'], all_labels['train'], 
+        all_data['train'], all_labels['train'],
         all_data['dev'], all_labels['dev'],
         get_initial_params, forward_prop, backward_prop_func,
-        learning_rate=1e-10, batch_size=16, num_batches=400
+        learning_rate=1e-2, batch_size=16, num_batches=400
     )
 
     t = np.arange(400 // 100)

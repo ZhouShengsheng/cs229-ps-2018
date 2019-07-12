@@ -1,2 +1,15 @@
 \begin{answer}
+    In this case, $g'(w^T_j x^{(i)}) = \frac{1}{2\sqrt \pi} \exp (-\frac{1}{2}(w^T_jx^{(i)})^2)$. And thus
+$$
+\begin{aligned}
+\nabla_Wl(W) &= \sum_{i=1}^m \left(W^{-T} + \sum_{j=1}^n\nabla_W(-\frac{1}{2}\log 2\pi - \frac{1}{2}(w_j^Tx^{(i)})^2\right)\\
+&= \sum_{i=1}^m \left(W^{-T}  - Wx^{(i)}x^{(i)^T}\right)\\
+&= mW^{-T} - WX^TX
+\end{aligned}
+$$
+Setting this to zero, we get
+$$
+W^TW = \frac{1}{m}(X^TX)^{-1}
+$$
+We can easily see that, if $W$ is a solution, then $R$ will be a solution, since $(RW)^T(RW) = W^TR^TRW = W^TW$
 \end{answer}

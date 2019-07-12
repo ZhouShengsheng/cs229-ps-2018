@@ -19,15 +19,14 @@ def update_W(W, x, learning_rate):
     """
     
     # *** START CODE HERE ***
-    inv_T = np.linalg.inv(W).T
-    signs = np.zeros((len(W),1))
-    for j in range(len(W)):
-        signs[j] = np.sign(np.dot(W[j],x))
-    X = np.tile(x,(len(W),1))
-    term2 = np.multiply(signs,X)
-    updated_W = W + learning_rate*(inv_T - term2)
+    from numpy.linalg import pinv
+    sign = W.dot(x)
+    sign[sign >= 0] = 1
+    sign[sign < 0] = -1
+    
+    W = W + learning_rate * (pinv(W.T) - np.outer(sign, x))
+    return W
     # *** END CODE HERE ***
-    return updated_W
 
 
 def unmix(X, W):
@@ -46,10 +45,7 @@ def unmix(X, W):
 
 
     # *** START CODE HERE ***
-    #W is (5,5)
-    #x is (length of each example,5)
-    # s is the same length as X, where each column is an unmixed speaker
-    S = np.matmul(X,W.T)
+    S = X.dot(W.T)
     # *** END CODE HERE ***
 
     return S

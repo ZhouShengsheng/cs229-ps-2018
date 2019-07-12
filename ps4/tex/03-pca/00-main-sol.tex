@@ -1,2 +1,21 @@
 \begin{answer}
+    Since
+$$
+\begin{aligned}
+\sum_{i=1}^m\|x^{(i)} - f_u(x^{(i)})\|_2^2 &= \sum_{i=1}^m\|x^{(i)} - uu^Tx^{(i)}\|^2_2\\
+&= \sum_{i=1}^m (x^{(i)} - uu^Tx^{(i)})^T(x^{(i)} - uu^Tx^{(i)})\\
+&= \sum_{i=1}^m (x^{(i)T}x^{(i)} -2 x^{(i)T}uu^Tx^{(i)} + x^{(i)T}uu^Tx^{(i)})\\
+&= \sum_{i=1}^m (x^{(i)T}x^{(i)}) - \sum_{i=1}^m u^Tx^{(i)}x^{(i)T}u
+\end{aligned}
+$$
+Minimizing this is just maximizing
+$$
+\sum_{i=1}^m u^Tx^{(i)}x^{(i)T}u = u^T(\sum_{i=1}^mx^{(i)}x^{(i){^T}}) u
+$$
+This is the same objective for maximizing variance. The solution is given by the first eigenvector of the empirical covariance matrix.
+
+
+
+
+
 \end{answer}

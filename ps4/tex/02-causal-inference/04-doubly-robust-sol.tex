@@ -1,3 +1,16 @@
 
 \begin{answer}
+    \begin{enumerate}
+        \item
+    I think the equation should really be
+$$
+\mathbb E_{s\sim p(s)}[\mathbb E_{a\sim \pi_1(s, a)}\hat R(s, a) + \mathbb E_{a\sim \pi_0(s, a)}[\frac{\pi_1(s, a)}{\hat\pi_0(s, a)}(R(s, a) - \hat R(s, a))]]
+$$
+if $\hat \pi_0 = \pi_0$, then the above reduces to
+$$
+\mathbb E_{s\sim p(s)}[\mathbb E_{a\sim \pi_1(s, a)}\hat R(s, a) + \mathbb E_{a\sim \pi_1(s, a)}[(R(s, a) - \hat R(s, a))]] =\mathbb{E}_{s \sim p(s) \atop a \sim \pi_{1}(s, a)} R(s, a)
+$$
+    \item If $\hat R = R$, then the second inner expectation will be zero, and the result is obvious.
+    \end{enumerate}
+
 \end{answer}
